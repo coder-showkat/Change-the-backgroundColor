@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change the background-color</title>
+    <style>
+    body {
+       margin: 0px;
+       height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        background-color: violet;
+        margin: auto;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        color: white;
+        text-shadow: -2px 0 0 0 black, 0 2px 0 0 black, 2px 0 0 0 black, 0 -2px 0 0 black;
+    }
+
+    button {
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 6px;
+        font-size: 18px;
+        background-color: black;
+        color: white;
+    }
+    </style>
+</head>
+<body>
+    <div class="container" id="root">
+      <h1>Change the background color by clicking the following button</h1>
+      <button id="btn">Change Color</button>
+    </div>
+    <script>
+        var x = true;
+
+        function colorGenerator() {
+        var red = Math.round(Math.random() * 255);
+        var green = Math.round(Math.random() * 255);
+        var blue = Math.round(Math.random() * 255);
+
+        return `rgb(${red}, ${green}, ${blue})`
+    }
+        btn.addEventListener('click', () => {
+            var bgcolor = colorGenerator();
+            if (x == true) {
+            document.getElementById('root').style.backgroundColor = bgcolor;
+            
+            }
+        })
+    </script>
+</body>
+</html>
